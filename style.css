@@ -1,0 +1,424 @@
+/* ==========================================================================
+   TransitFleets - Outstation Cab Booking Stylesheet
+   Pure CSS for 100% Script-Free HTML & Bootstrap 5.3 Architecture
+   ========================================================================== */
+
+:root {
+  --tf-navy-dark: #0a1c33;
+  --tf-navy-mid: #102a4d;
+  --tf-blue-primary: #0284c7;
+  --tf-blue-hover: #0369a1;
+  --tf-emerald: #10b981;
+  --tf-emerald-hover: #059669;
+  --tf-slate-50: #f8fafc;
+  --tf-slate-100: #f1f5f9;
+  --tf-slate-200: #e2e8f0;
+  --tf-slate-600: #475569;
+  --tf-slate-700: #334155;
+  --tf-slate-800: #1e293b;
+  --tf-slate-900: #0f172a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--tf-slate-800);
+  background-color: var(--tf-slate-50);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   Header & Navigation
+   -------------------------------------------------------------------------- */
+.navbar-brand {
+  letter-spacing: -0.02em;
+}
+
+.nav-link {
+  transition: color 0.15s ease;
+}
+
+/* --------------------------------------------------------------------------
+   Hero Section
+   -------------------------------------------------------------------------- */
+.hero-section {
+  background: linear-gradient(135deg, #071526 0%, #0d2342 50%, #091e38 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-pattern-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(rgba(2, 132, 199, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Cards & Surfaces
+   -------------------------------------------------------------------------- */
+.card {
+  border-radius: 1rem;
+  border-color: rgba(226, 232, 240, 0.9);
+}
+
+.rounded-4 {
+  border-radius: 1rem !important;
+}
+
+/* --------------------------------------------------------------------------
+   Form Elements (Pure HTML5 Native Validation & UX)
+   -------------------------------------------------------------------------- */
+.form-control, .form-select {
+  border-radius: 0.5rem;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.9rem;
+  border-color: #cbd5e1;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--tf-blue-primary);
+  box-shadow: 0 0 0 0.2rem rgba(2, 132, 199, 0.15);
+}
+
+.form-label {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--tf-slate-700);
+  margin-bottom: 0.35rem;
+}
+
+/* Segmented Trip Type Toggle (Pure CSS Radio State) */
+.trip-type-btn-group .btn {
+  font-size: 0.825rem;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.trip-type-btn-group .btn-check:checked + .btn {
+  background-color: #ffffff;
+  color: var(--tf-slate-900);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   Buttons & Brand Accents
+   -------------------------------------------------------------------------- */
+.btn-primary {
+  background-color: var(--tf-blue-primary);
+  border-color: var(--tf-blue-primary);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--tf-blue-hover);
+  border-color: var(--tf-blue-hover);
+}
+
+.btn-whatsapp {
+  background-color: var(--tf-emerald);
+  color: #ffffff;
+  border-color: var(--tf-emerald);
+}
+
+.btn-whatsapp:hover, .btn-whatsapp:focus {
+  background-color: var(--tf-emerald-hover);
+  color: #ffffff;
+  border-color: var(--tf-emerald-hover);
+}
+
+.text-primary-tf {
+  color: var(--tf-blue-primary) !important;
+}
+
+.bg-primary-tf {
+  background-color: var(--tf-blue-primary) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Section Typography
+   -------------------------------------------------------------------------- */
+.section-kicker {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--tf-blue-primary);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--tf-slate-900);
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2.25rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Vehicle, Route, and Feature Cards
+   -------------------------------------------------------------------------- */
+.vehicle-card, .route-card, .highlight-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.vehicle-card:hover, .route-card:hover, .highlight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  border-color: #bae6fd !important;
+}
+
+.vehicle-img-wrapper {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: #f1f5f9;
+}
+
+.vehicle-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.vehicle-card:hover .vehicle-img-wrapper img {
+  transform: scale(1.04);
+}
+
+/* --------------------------------------------------------------------------
+   Pure HTML5 Native Accordion (<details> & <summary> - Zero JavaScript)
+   -------------------------------------------------------------------------- */
+details.tf-faq-item {
+  border: 1px solid var(--tf-slate-200);
+  border-radius: 0.75rem;
+  margin-bottom: 0.75rem;
+  background-color: #ffffff;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+details.tf-faq-item[open] {
+  border-color: #bae6fd;
+}
+
+summary.tf-faq-summary {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--tf-slate-900);
+  background-color: #f8fafc;
+  padding: 1.1rem 1.25rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+summary.tf-faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+summary.tf-faq-summary::after {
+  content: "+";
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--tf-blue-primary);
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+details.tf-faq-item[open] summary.tf-faq-summary {
+  background-color: #f0f9ff;
+  color: var(--tf-blue-primary);
+}
+
+details.tf-faq-item[open] summary.tf-faq-summary::after {
+  content: "−";
+  transform: rotate(0deg);
+}
+
+.tf-faq-body {
+  padding: 1.1rem 1.25rem;
+  font-size: 0.9rem;
+  color: var(--tf-slate-600);
+  line-height: 1.6;
+  border-top: 1px solid var(--tf-slate-100);
+  background-color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   Regional Coverage Grid
+   -------------------------------------------------------------------------- */
+.region-group-card {
+  border-radius: 0.75rem;
+  background-color: #f8fafc;
+  border: 1px solid var(--tf-slate-200);
+  padding: 1.25rem;
+  height: 100%;
+}
+
+.region-city-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.785rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  background-color: #ffffff;
+  color: var(--tf-slate-700);
+  border: 1px solid var(--tf-slate-200);
+  text-decoration: none;
+  transition: all 0.15s ease;
+  margin: 0.2rem;
+}
+
+.region-city-badge:hover {
+  background-color: var(--tf-blue-primary);
+  color: #ffffff;
+  border-color: var(--tf-blue-primary);
+}
+
+/* --------------------------------------------------------------------------
+   Floating Mobile Action Bar (100% Pure HTML Anchor Links)
+   -------------------------------------------------------------------------- */
+.mobile-action-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1040;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--tf-slate-200);
+  padding: 0.5rem 0.75rem;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.mobile-action-bar .btn {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.6rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 767.98px) {
+  body {
+    padding-bottom: 70px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Interactive Enhancements (Inline Script UX Helpers)
+   -------------------------------------------------------------------------- */
+/* Quick City Selector Chips */
+.quick-city-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  background-color: #f1f5f9;
+  color: var(--tf-slate-700);
+  border: 1px solid #cbd5e1;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+  line-height: 1.2;
+}
+
+.quick-city-chip:hover {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  border-color: #7dd3fc;
+  transform: translateY(-1px);
+}
+
+/* Location Swap Button */
+.swap-btn {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: var(--tf-slate-700);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 0;
+  font-size: 0.85rem;
+}
+
+.swap-btn:hover {
+  background-color: #f8fafc;
+  color: var(--tf-blue-primary);
+  border-color: var(--tf-blue-primary);
+  transform: rotate(180deg);
+}
+
+/* Field Highlight Pulse */
+.field-highlight {
+  animation: pulseField 1.2s ease;
+}
+
+@keyframes pulseField {
+  0% { box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.5); border-color: var(--tf-blue-primary); }
+  50% { box-shadow: 0 0 0 5px rgba(2, 132, 199, 0.25); border-color: var(--tf-blue-primary); }
+  100% { box-shadow: 0 0 0 0 rgba(2, 132, 199, 0); }
+}
+
+/* Back to Top Floating Button */
+.back-to-top {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  z-index: 1030;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: var(--tf-blue-primary);
+  color: #ffffff;
+  transform: translateY(-3px);
+}
